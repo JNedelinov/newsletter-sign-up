@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 @font-face {
   font-family: 'Roboto-Bold';
   src: url(../../assets/fonts/Roboto-Bold.ttf);
@@ -41,12 +36,10 @@
   list-style: 150%;
   letter-spacing: 0rem;
 }
-.hidden {
-  display: none !important;
-}
-.tablet,
-.desktop {
-  display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   min-height: 100vh;
@@ -63,28 +56,60 @@ img {
 ul {
   list-style: none;
 }
-.card {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 23.4rem;
+.hidden {
+  display: none !important;
 }
+.tablet,
+.desktop {
+  display: none;
+}
+/* Base View States */
+@media (min-width: 430px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+  body {
+    background-color: #36384c;
+  }
+}
+@media (min-width: 1024px) {
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+/* Shared Flex Layouts (Deduplicated) */
+.card,
 .subs-card > .content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.subs-card > .content-container main,
+.subs-card > .content-container main ul,
+.conf-card > .content-container,
+.conf-card > .content-container main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Component Specific Styles */
+.card {
+  flex-grow: 1;
+  max-width: 23.4rem;
+}
+.subs-card > .content-container {
   gap: 2rem;
-  border-radius: 2.25rem;
   overflow: hidden;
 }
 .subs-card > .content-container main {
   padding: 0 1rem 2.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 2.5rem;
 }
 .subs-card > .content-container main .content-container {
@@ -94,9 +119,6 @@ ul {
   gap: 1.5rem;
 }
 .subs-card > .content-container main ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 0.5rem;
 }
 .subs-card > .content-container main ul li {
@@ -150,9 +172,6 @@ ul {
   padding: 0 1rem;
 }
 .conf-card > .content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 2rem;
   grid-row: span 3;
 }
@@ -160,9 +179,6 @@ ul {
   align-self: flex-start;
 }
 .conf-card > .content-container main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 2rem;
 }
 .conf-card > .content-container main .conf-email {
@@ -185,71 +201,41 @@ ul {
   background: linear-gradient(90deg, #ff6a3a 0%, #ff5d5c 50%, #ff527b 100%);
   cursor: pointer;
 }
+/* Component Media Queries */
 @media (min-width: 430px) {
-  .mobile {
-    display: none;
-  }
-  .tablet {
-    display: block;
-  }
-  body {
-    background-color: #36384c;
-  }
-  body .card {
+  .card {
     margin: 0 2.5rem;
     max-width: none;
     border-radius: 0.5rem;
   }
-  body .subs-card > .content-container {
+  .subs-card > .content-container {
     padding: 2.5rem;
     background-color: white;
+    border-radius: 2.25rem;
   }
-  body .subs-card > .content-container main {
+  .subs-card > .content-container main {
     padding: 0;
     width: 100%;
   }
-  body .conf-card {
+  .conf-card {
     padding: 4rem;
     max-width: 31.5rem;
     display: flex;
     gap: 2rem;
     flex-grow: 0;
-    background-color: white;
-  }
-  body .conf-card > .content-container .img-banner {
-    align-self: flex-start;
-  }
-  body .conf-card > .content-container main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-  }
-  body .conf-card > .content-container main .conf-email {
-    font-weight: bold;
-  }
-  body .conf-card footer {
-    width: 100%;
-    align-self: flex-start;
   }
 }
 @media (min-width: 1024px) {
-  .tablet {
-    display: none;
-  }
-  .desktop {
-    display: block;
-  }
-  body .subs-card > .content-container {
+  .subs-card > .content-container {
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
-  body .subs-card > .content-container .img-banner {
+  .subs-card > .content-container .img-banner {
     grid-column: 2 / 3;
   }
-  body .subs-card > .content-container main {
+  .subs-card > .content-container main {
     grid-row-start: 1;
   }
 }

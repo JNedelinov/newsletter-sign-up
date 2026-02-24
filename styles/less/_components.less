@@ -1,0 +1,191 @@
+/* Shared Flex Layouts (Deduplicated) */
+.card,
+.subs-card > .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subs-card > .content-container main,
+.subs-card > .content-container main ul,
+.conf-card > .content-container,
+.conf-card > .content-container main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Component Specific Styles */
+.card {
+  flex-grow: 1;
+  max-width: 23.4rem;
+}
+
+.subs-card {
+  > .content-container {
+    gap: 2rem;
+    overflow: hidden;
+
+    main {
+      padding: 0 1rem 2.5rem 1rem;
+      gap: 2.5rem;
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      ul {
+        gap: 0.5rem;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          &::before {
+            display: block;
+            align-self: flex-start;
+            content: '\f058';
+            font-family: 'Font Awesome 7 Free';
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: @red;
+          }
+        }
+      }
+
+      #form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .email-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        input {
+          width: 100%;
+          padding: 1rem 2rem;
+          border: 1px solid @grey;
+          border-radius: 0.5rem;
+        }
+
+        .error {
+          border: 1px solid @red;
+          background-color: #ffe7e6;
+        }
+
+        .error,
+        .err-msg {
+          color: @red;
+        }
+      }
+    }
+  }
+}
+
+.conf-card {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  background-color: white;
+  padding: 0 1rem;
+
+  > .content-container {
+    gap: 2rem;
+    grid-row: span 3;
+
+    .img-banner {
+      align-self: flex-start;
+    }
+
+    main {
+      gap: 2rem;
+
+      .conf-email {
+        font-weight: bold;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    align-self: flex-start;
+    grid-row: 4/5;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: @blue-800;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background: @gradient-4;
+    cursor: pointer;
+  }
+}
+
+/* Component Media Queries */
+@media (min-width: 430px) {
+  .card {
+    margin: 0 2.5rem;
+    max-width: none;
+    border-radius: 0.5rem;
+  }
+
+  .subs-card {
+    > .content-container {
+      padding: 2.5rem;
+      background-color: white;
+      border-radius: 2.25rem;
+
+      main {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .conf-card {
+    padding: 4rem;
+    max-width: 31.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-grow: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subs-card {
+    > .content-container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+
+      .img-banner {
+        grid-column: 2 / 3;
+      }
+
+      main {
+        grid-row-start: 1;
+      }
+    }
+  }
+}
