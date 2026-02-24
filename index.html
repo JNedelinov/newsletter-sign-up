@@ -11,6 +11,10 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles/css/styles.css" />
     <script defer src="./scripts/main.js"></script>
 
@@ -31,60 +35,68 @@
   </head>
   <body>
     <!-- Sign-up form start -->
-    <article class="subs-card">
-      <header class="img-banner">
-        <img src="./assets//images/illustration-sign-up-mobile.svg" alt="" />
-      </header>
+    <article class="card subs-card">
+    <!-- <article class="card subs-card hidden"> -->
+      <div class="content-container">
+        <header class="img-banner">
+          <img src="./assets//images/illustration-sign-up-mobile.svg" alt="" />
+        </header>
 
-      <main>
-        <h1>Stay updated!</h1>
+        <main>
+          <div class="content-container">
+            <h1>Stay updated!</h1>
 
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-        <ul>
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
-        </ul>
-
-        <form id="form" novalidate>
-          <div class="email-container">
-            <label name="email" for="email">Email address</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="email@company.com"
-            />
+            <ul>
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
           </div>
 
-          <div class="btn-container">
-            <button class="btn" type="submit">
-              Subscribe to monthly newsletter
-            </button>
-          </div>
-        </form>
-      </main>
+          <form id="form" novalidate>
+            <div class="email-container">
+              <label name="email" for="email">Email address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@company.com"
+              />
+            </div>
+
+            <div class="btn-container">
+              <button class="btn" type="submit">
+                Subscribe to monthly newsletter
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
     </article>
 
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
 
-    <article class="conf-card hidden">
-      <header class="img-banner">
-        <img src="./assets/images/icon-success.svg" alt="" />
-      </header>
+    <article class="card conf-card hidden">
+    <!-- <article class="card conf-card"> -->
+      <div class="content-container">
+        <header class="img-banner">
+          <img src="./assets/images/icon-success.svg" alt="" />
+        </header>
 
-      <main>
-        <h1>Thanks for subscribing!</h1>
+        <main>
+          <h1>Thanks for subscribing!</h1>
 
-        <p>
-          A confirmation email has been sent to
-          <span id="conf-email">ash@loremcompany.com</span>. Please open it and
-          click the button inside to confirm your subscription.
-        </p>
-      </main>
+          <p>
+            A confirmation email has been sent to
+            <span id="conf-email">ash@loremcompany.com</span>. Please open it
+            and click the button inside to confirm your subscription.
+          </p>
+        </main>
+      </div>
 
       <footer>
         <button class="btn" type="button">Dismiss message</button>
