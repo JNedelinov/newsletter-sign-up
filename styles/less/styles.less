@@ -171,11 +171,28 @@ ul {
           gap: 0.5rem;
         }
 
+        label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
         input {
           width: 100%;
           padding: 1rem 2rem;
           border: 1px solid @grey;
           border-radius: 0.5rem;
+        }
+
+        .error {
+          border: 1px solid @red;
+          background-color: #ffe7e6;
+        }
+
+        .error,
+        .err-msg {
+          color: @red;
         }
       }
     }

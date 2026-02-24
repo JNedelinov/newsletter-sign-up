@@ -123,11 +123,25 @@ ul {
   flex-direction: column;
   gap: 0.5rem;
 }
+.subs-card > .content-container main #form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .subs-card > .content-container main #form input {
   width: 100%;
   padding: 1rem 2rem;
   border: 1px solid #949494;
   border-radius: 0.5rem;
+}
+.subs-card > .content-container main #form .error {
+  border: 1px solid #ff6155;
+  background-color: #ffe7e6;
+}
+.subs-card > .content-container main #form .error,
+.subs-card > .content-container main #form .err-msg {
+  color: #ff6155;
 }
 .conf-card {
   display: grid;
