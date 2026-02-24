@@ -36,19 +36,36 @@
   <body>
     <!-- Sign-up form start -->
     <article class="card subs-card">
-    <!-- <article class="card subs-card hidden"> -->
+      <!-- <article class="card subs-card hidden"> -->
       <div class="content-container">
         <header class="img-banner">
-          <img src="./assets//images/illustration-sign-up-mobile.svg" alt="" />
+          <img
+            class="mobile"
+            src="./assets//images/illustration-sign-up-mobile.svg"
+            alt=""
+          />
+          <img
+            class="tablet"
+            src="./assets//images/illustration-sign-up-tablet.svg"
+            alt=""
+          />
+          <img
+            class="desktop"
+            src="./assets//images/illustration-sign-up-desktop.svg"
+            alt=""
+          />
         </header>
 
         <main>
           <div class="content-container">
-            <h1>Stay updated!</h1>
+            <h1 class="mobile text-preset-1-mobile">Stay updated!</h1>
+            <h1 class="tablet desktop text-preset-1">Stay updated!</h1>
 
-            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <p class="text-preset-2-regular">
+              Join 60,000+ product managers receiving monthly updates on:
+            </p>
 
-            <ul>
+            <ul class="text-preset-2-regular">
               <li>Product discovery and building what matters</li>
               <li>Measuring to ensure updates are a success</li>
               <li>And much more!</li>
@@ -57,17 +74,20 @@
 
           <form id="form" novalidate>
             <div class="email-container">
-              <label name="email" for="email">Email address</label>
+              <label name="email" for="email" class="text-preset-3-bold"
+                >Email address</label
+              >
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="email@company.com"
+                class="text-preset-2-regular"
               />
             </div>
 
             <div class="btn-container">
-              <button class="btn" type="submit">
+              <button class="btn" type="submit" class="text-preset-2-bold">
                 Subscribe to monthly newsletter
               </button>
             </div>
@@ -81,25 +101,28 @@
     <!-- Success message start -->
 
     <article class="card conf-card hidden">
-    <!-- <article class="card conf-card"> -->
+      <!-- <article class="card conf-card"> -->
       <div class="content-container">
         <header class="img-banner">
           <img src="./assets/images/icon-success.svg" alt="" />
         </header>
 
         <main>
-          <h1>Thanks for subscribing!</h1>
+          <h1 class="mobile text-preset-1-mobile">Thanks for subscribing!</h1>
+          <h1 class="tablet desktop text-preset-1">Thanks for subscribing!</h1>
 
-          <p>
+          <p class="text-preset-2-regular">
             A confirmation email has been sent to
-            <span id="conf-email">ash@loremcompany.com</span>. Please open it
+            <span class="conf-email">ash@loremcompany.com</span>. Please open it
             and click the button inside to confirm your subscription.
           </p>
         </main>
       </div>
 
       <footer>
-        <button class="btn" type="button">Dismiss message</button>
+        <button class="btn" type="button" class="text-preset-2-bold">
+          Dismiss message
+        </button>
       </footer>
     </article>
 
