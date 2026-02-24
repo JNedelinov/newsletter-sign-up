@@ -10,7 +10,6 @@ const toggleCardsVisibility = () => {
 const form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {
-  console.log('here');
   e.preventDefault();
 
   // Grab the form data and turn it into a plain JavaScript object
