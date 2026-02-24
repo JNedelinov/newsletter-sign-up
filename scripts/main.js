@@ -12,7 +12,7 @@ const form = document.getElementById('form');
 form.addEventListener('submit', (e) => {
   console.log('here');
   e.preventDefault();
-  
+
   // Grab the form data and turn it into a plain JavaScript object
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData);
@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
     for (const field in errors) {
       const input = form.querySelector(`input[name=${field}]`);
       const label = form.querySelector(`label[name=${field}]`);
-      
+
       // Find the specific error span inside this field's label
       const errPlaceholderSpan = label.querySelector('.err-placeholder');
 
@@ -40,6 +40,9 @@ form.addEventListener('submit', (e) => {
       errPlaceholderSpan.textContent = errMsg;
     }
   } else {
+    document.querySelector('article.conf-card span.conf-email').textContent =
+      data.email;
+
     form
       .querySelectorAll('.error')
       .forEach((el) => el.classList.remove('error'));
@@ -49,9 +52,8 @@ form.addEventListener('submit', (e) => {
       el.querySelector('.err-placeholder').textContent = '';
     });
 
-    form.querySelectorAll('input').forEach((input) => (input.value = ''));
-
     toggleCardsVisibility();
+    form.querySelectorAll('input').forEach((input) => (input.value = ''));
   }
 });
 
@@ -60,7 +62,7 @@ form.querySelectorAll('input').forEach((input) =>
     // Check if the input is now empty and currently has an error
     if (e.target.value === '' && e.target.classList.contains('error')) {
       e.target.classList.remove('error');
-      
+
       // Find the error message span next to the input (sharing the same parent)
       const errPlaceholderSpan =
         e.target.parentElement.querySelector('.err-msg');
