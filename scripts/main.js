@@ -47,8 +47,7 @@ form.addEventListener('submit', (e) => {
       .forEach((el) => el.classList.remove('error'));
     form.querySelectorAll('.err-msg').forEach((el) => {
       el.classList.remove('err-msg');
-      // Look inside the former error element to clear the text
-      el.querySelector('.err-placeholder').textContent = '';
+      el.textContent = '';
     });
 
     toggleCardsVisibility();
